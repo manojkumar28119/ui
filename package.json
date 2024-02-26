@@ -35,7 +35,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.js",
     "lint-fix": "eslint src/**/*.js --fix",
-    "deploy": "vite build && gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "browserslist": {
     "production": [
