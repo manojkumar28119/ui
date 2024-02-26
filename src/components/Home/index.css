@@ -1,0 +1,73 @@
+.home-page{
+    background-color: #00a7f8;
+    height: 100vh;
+    padding: 10px;
+    font-family: "Roboto";
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.avatar-card{
+    background-color: #ffffff;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+.avatar-icon{
+     color: #00a7f8;  
+     font-size: 25px;
+}
+.popup-container{
+     background-color: #00c3f9;
+     padding: 0px;
+ }
+.menu-btn{
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+.menu-icon{
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.body-card{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.name-heading{
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 500;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+.mySwiper{
+    width: 280px;
+    align-self: flex-start;
+ }
+.carousal-card{
+    height: 150px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    opacity: 0.5;
+ }
+ .card{
+    background-color: #ffffff;
+    border-radius: 20px;
+     margin-top: 50px;
+    outline: none;
+ }
+.text{
+    color: #ffffff;
+    font-size: 14px;
+    padding-left: 5px;
+    margin-top: 5px;
+ }
