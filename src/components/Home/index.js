@@ -1,7 +1,8 @@
 import {Redirect} from "react-router-dom"
  import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
-import Popup from 'reactjs-popup'
+import { Autoplay, Pagination, Navigation  } from 'swiper/modules';
+import Cookies from "js-cookie"
+
 
 import 'reactjs-popup/dist/index.css'
 
@@ -9,38 +10,13 @@ import 'reactjs-popup/dist/index.css'
 import 'swiper/css';
 import 'swiper/css/pagination';
 
- 
-
-import { TfiMenuAlt } from "react-icons/tfi";
-
-import Cookies from "js-cookie"
+import Header from "../Header" 
 
 import "./index.css"
 
  
  
 const Home = () => {
-     const settings = {
-          className: "slider variable-width",
-          dots: true,
-          infinite: true,
-          centerMode: true,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          variableWidth: true
-        };
-
-
-     const renderHeader = () => (
-          <div className="header">
-               <div className="avatar-card">
-                   <i className="fa-solid fa-user avatar-icon" ></i>
-               </div>
-               <button type="button" className="menu-btn">
-                         <TfiMenuAlt className="menu-icon"/>  
-               </button>              
-          </div>
-     )  
 
      const userName = Cookies.get("userName")
 
@@ -52,28 +28,48 @@ const Home = () => {
      
      return (
           <div className="home-page">
-               {renderHeader()}
+               <Header/>
                <div className="body-card">
-                    <h1 className="name-heading">Hi! {userName}</h1>
-                    <div className="slider-container">
-                         <Swiper
-                              spaceBetween={30}
-                              pagination={{
-                                   clickable: true,
-                              }}
-                              modules={[Pagination]}
-                              className="mySwiper"
-                              >
-                              <SwiperSlide className="carousal-card"></SwiperSlide>
-                              <SwiperSlide className="carousal-card"> </SwiperSlide>
-                              <SwiperSlide className="carousal-card"></SwiperSlide>
-                              <SwiperSlide className="carousal-card"></SwiperSlide>
-                         </Swiper>
+                    <div className="body-card-1">
+                         <h1 className="name-heading">Hi! {userName}</h1>
+                              <div className="slider-container">
+                                   <Swiper
+                                        spaceBetween={30}
+                                        centeredSlides={true}
+                                        autoplay={{
+                                        delay: 3000,
+                                        disableOnInteraction: false,
+                                        }}
+                                        pagination={{
+                                        clickable: true,
+                                        }}
+                                        navigation={true}
+                                        modules={[Autoplay, Pagination, Navigation]}
+                                        className="mySwiper"
+                                        >
+                                        <SwiperSlide className="carousal-card">
+                                             <img className="swiper-img" src="https://res.cloudinary.com/dyvuuyt4s/image/upload/f_auto,q_auto/ochfxizktgayigkaea5n" alt = "image" />
+                                        </SwiperSlide>
+                                        <SwiperSlide className="carousal-card"> 
+                                             <img className="swiper-img" src = "https://res.cloudinary.com/dyvuuyt4s/image/upload/f_auto,q_auto/nkx1x8tzkjxgax7jlhcm" alt = "image" />
+                                        </SwiperSlide>
+                                        <SwiperSlide className="carousal-card">
+                                             <img className="swiper-img" src = "https://res.cloudinary.com/dyvuuyt4s/image/upload/f_auto,q_auto/qyt2dekxpa46db2rpeqd" alt = "image" />
+                                        </SwiperSlide>
+                                        <SwiperSlide className="carousal-card">
+                                             <img className="swiper-img" src = "https://res.cloudinary.com/dyvuuyt4s/image/upload/f_auto,q_auto/x5jg2pzz7fdsybnljcvc" alt = "image" />
+                                        </SwiperSlide>
+                                        <SwiperSlide className="carousal-card">
+                                             <img className="swiper-img" src = "https://res.cloudinary.com/dyvuuyt4s/image/upload/f_auto,q_auto/gwn3azhtliwogkpfjoud" alt = "image" />
+                                        </SwiperSlide>
+                                   </Swiper>
+                              </div>
                     </div>
-                    <textarea cols={35} rows={10} className="card">
-
-                    </textarea>
-                    <p className="text">What do you want to learn today {userName}</p>
+                    <div className="body-card-2">
+                         <textarea cols={35} rows={10} className="text-card">
+                         </textarea>
+                         <p className="text">What do you want to learn today {userName}</p>
+                    </div>
                </div>
           </div>
      )
